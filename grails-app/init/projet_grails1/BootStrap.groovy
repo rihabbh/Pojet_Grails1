@@ -26,8 +26,7 @@ class BootStrap {
 
     //    def loc = new Localisation(longitude :(float) 47.9,latitude :(float) 7.3).save(flush: true, failOnError: true)
 
-
-        def loc1= new Localisation(latitude: 48.866667, longitude:2.33333)
+             def loc1= new Localisation(latitude: 48.866667, longitude:2.33333)
         (1..3).each {
             int groupIndex ->
                 def poisGroupInstance = new GroupPois(nomGroup: 'group '+groupIndex).save(flush: true, failOnError: true)

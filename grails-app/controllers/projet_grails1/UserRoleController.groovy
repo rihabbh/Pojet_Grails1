@@ -19,7 +19,7 @@ class UserRoleController {
     def indexmod(Integer max){
         def userRoleList = UserRole.findAllByRole(Role.findByAuthority('ROLE_USER'))
         def userList = User.getAll(userRoleList.collect{it.user.id})
-        render (view: '/user/index', model:[userList:userList])// ici on recupére les info de cette path des user puis dans sont index
+        render (view: '/user/index', model:[userList:userList])
     }
 
     def show(UserRole userRole) {

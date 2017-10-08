@@ -48,6 +48,9 @@
         <li>
             <a href="/groupPois/map">Carte des POI</a>
         </li>
+        <li>
+            <a href="/user/info">Mes Infos</a>
+        </li>
         <li>   <a href="/logout/index"  role="button">Deconnexion</a></li>
     </sec:ifLoggedIn>
 
