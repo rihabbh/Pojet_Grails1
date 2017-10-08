@@ -5,8 +5,9 @@ class Localisation {
 
 
     static belongsTo = [pois: Pois]
-    int  latitude
-    int longitude
+    float  latitude
+    float longitude
+
 
 
 

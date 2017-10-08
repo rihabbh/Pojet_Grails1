@@ -9,8 +9,15 @@ class MediaController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+//        params.max = Math.min(max ?: 10, 100)
+//        respond Media.list(params), model:[mediaCount: Media.count()]
+        redirect(action: "list", params: params)
+
+    }
+
+    def list(Integer max){
         params.max = Math.min(max ?: 10, 100)
-        respond Media.list(params), model:[mediaCount: Media.count()]
+        [mediaInstanceList:  Media.list(params), mediaCount: Media.count()]
     }
 
     def upload() {

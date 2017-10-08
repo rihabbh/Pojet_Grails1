@@ -12,10 +12,20 @@ class GroupPoisController {
 
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond GroupPois.list(params), model:[groupPoisCount: GroupPois.count()]
+//        params.max = Math.min(max ?: 10, 100)
+//        respond GroupPois.list(params), model:[groupPoisCount: GroupPois.count()]
+        redirect(action: "list", params: params)
+
     }
 
+    def list(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        [groupInstanceList: GroupPois.list(params), groupPoisCount: GroupPois.count()]
+    }
+
+    def map(){
+        [groupInstanceList: GroupPois.list(params), groupPoisCount: GroupPois.count()]
+    }
     def show(GroupPois groupPois) {
         respond groupPois
     }
@@ -74,7 +84,7 @@ class GroupPoisController {
         def imagesIdList = groupPois.images.collect{it.id}
         imagesIdList.each {
             Long id ->
-                Media.get(id).removeFromPois(groupPois).save(flush:true)
+                Media.get(id).removeFromGroupe(groupPois).save(flush:true)
 
         }
         params.images.each

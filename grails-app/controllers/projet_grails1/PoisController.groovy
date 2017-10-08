@@ -1,5 +1,7 @@
 package projet_grails1
 
+import grails.converters.JSON
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -9,11 +11,19 @@ class PoisController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Pois.list(params), model:[poisCount: Pois.count()]
+//        params.max = Math.min(max ?: 10, 100)
+//        respond Pois.list(params), model:[poisCount: Pois.count()]
+        redirect(action: "list", params: params)
     }
 
+    def list(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        [poisInstanceList:  Pois.list(params), PoisCount: Pois.count()]
+    }
+
+
     def show(Pois pois) {
+        [poisInstance : pois]
         respond pois
     }
 

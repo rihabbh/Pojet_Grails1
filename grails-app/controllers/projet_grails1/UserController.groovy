@@ -20,10 +20,9 @@ class UserController {
     }
 
     def create() {
-        def util = new User(params)
-        def perm= new Role(authority: 'USER_ROLE')
-        def ur =  new UserRole(user : util, role: perm )
-        respond util
+        def util= new User(params)
+    //    UserRole.create(util,new Role(authority: 'ROLE_USER'),true)
+        respond  util
     }
 
     @Transactional

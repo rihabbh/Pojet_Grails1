@@ -22,7 +22,13 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="pois" />
+            <th>    <g:each in="${pois.images}" var="media">
+                <img src="${createLink(controller: 'Media', action: 'DisplayImage', params: ['id': media.id])}"  height="300" width="300"/>
+            </g:each> </th>
+            <h1>Situer le POI</h1>
+
             <g:form resource="${this.pois}" method="DELETE">
+
                 <fieldset class="buttons">
                     <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE_MOD">
                     <g:link class="edit" action="edit" resource="${this.pois}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

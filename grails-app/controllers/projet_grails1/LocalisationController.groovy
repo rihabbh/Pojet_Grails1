@@ -8,13 +8,20 @@ class LocalisationController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Localisation.list(params), model:[localisationCount: Localisation.count()]
+    def index() {
+       // params.max = Math.min(max ?: 10, 100)
+        //respond Localisation.list(params), model:[localisationCount: Localisation.count()]
+        redirect(action: "list", params: params)
     }
 
     def show(Localisation localisation) {
         respond localisation
+    }
+
+
+    def list(Integer max){
+        params.max = Math.min(max ?: 10, 100)
+        [locInstanceList: Localisation.list(params), localisationCount: Localisation.count()]
     }
 
     def create() {

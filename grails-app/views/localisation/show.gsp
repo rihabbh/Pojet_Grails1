@@ -20,6 +20,18 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="localisation" />
+            <script>
+                function myMap() {
+                    var mapProp= {
+                        center:new google.maps.LatLng(46.3,7.3),
+
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4gFNEy61-CP4vgNVQCjBfGw6odeb-gt8&callback=myMap"></script>
+
             <g:form resource="${this.localisation}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.localisation}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

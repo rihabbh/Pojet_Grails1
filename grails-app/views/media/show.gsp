@@ -20,7 +20,7 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="media" except="filedata"/>
-            <td><img src="${createLink(controller: 'Media', action: 'DisplayImage', params: ['id': media.id])}"/></td>
+            <p>Image :              <img src="${createLink(controller: 'Media', action: 'DisplayImage', params: ['id': media.id])}"/></p>
 
             <g:form resource="${this.media}" method="DELETE">
                 <fieldset class="buttons">
