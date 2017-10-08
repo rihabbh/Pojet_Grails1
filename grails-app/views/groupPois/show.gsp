@@ -23,6 +23,10 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="groupPois" />
+            <h1>Galerie d'image du groupe</h1>
+            <th>    <g:each in="${groupPois.images}" var="media">
+                <img src="${createLink(controller: 'Media', action: 'DisplayImage', params: ['id': media.id])}"  height="300" width="300"/>
+            </g:each> </th>
             <g:form resource="${this.groupPois}" method="DELETE">
                 <fieldset class="buttons">
                     <sec:ifAnyGranted roles="ROLE_ADMIN,ROLE_MOD">

@@ -38,7 +38,7 @@
             for (var iter=0; iter< latList.length; iter++ ){
                 var my1 = new google.maps.LatLng(latList[iter],lngList[iter]);
                 var marker1 = new google.maps.Marker ({position:my1});
-    //            marker1.setMap(map);
+                marker1.setMap(map);
   //              console.log( nomList[iter])
       //          var infowindow = new google.maps.InfoWindow({
        // content:  nomList[iter]

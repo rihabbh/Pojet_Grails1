@@ -22,10 +22,10 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="pois" />
+            <h1>Galerie d'image du POI</h1>
             <th>    <g:each in="${pois.images}" var="media">
                 <img src="${createLink(controller: 'Media', action: 'DisplayImage', params: ['id': media.id])}"  height="300" width="300"/>
             </g:each> </th>
-            <h1>Situer le POI</h1>
 
             <g:form resource="${this.pois}" method="DELETE">
 

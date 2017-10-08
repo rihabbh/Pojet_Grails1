@@ -1,4 +1,6 @@
-
+medias :
+    path : 'C:\MAMP\bin\apache\manual\images'
+    url: 'http://127.001.8888'
 
 ---
 grails:
@@ -103,17 +105,17 @@ dataSource:
 environments:
     development:
         dataSource:
-            uploadFolder : 'C:\Users\Public\Pictures'
+            uploadFolder : 'C:\MAMP\bin\apache\manual\images'
             dbCreate: create-drop
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
-            uploadFolder : 'C:\Users\Public\Pictures'
+            uploadFolder : 'C:\MAMP\bin\apache\manual\images'
             dbCreate: update
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
-            uploadFolder : 'C:\Users\Public\Pictures'
+            uploadFolder : 'C:\MAMP\bin\apache\manual\images'
             dbCreate: none
             url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             properties:
