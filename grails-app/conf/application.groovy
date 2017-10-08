@@ -23,7 +23,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
 	[pattern: '/role/**', 		 access: ['ROLE_ADMIN']],
-	[pattern: '/user/**', 		 access: ['ROLE_ADMIN','ROLE_MOD','ROLE_USER']],
+	[pattern: '/user/**', 		 access: ['permitAll']],
 	[pattern: '/userRole/**', 	 access: ['ROLE_ADMIN','ROLE_MOD']],
     [pattern: '/pois/**', 	     access: ['ROLE_ADMIN','ROLE_MOD','ROLE_USER']],
     [pattern: '/groupPois/**', 	 access: ['ROLE_ADMIN','ROLE_MOD','ROLE_USER']],

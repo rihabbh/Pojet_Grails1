@@ -47,30 +47,6 @@
     </div>
 </div>
 
-<h1>Carte des Points d'intérêts</h1>
-
-<div id="googleMap" style="width:100%;height:400px;"></div>
-
-<script>
-    var latList = ${groupInstanceList.pois.loc.latitude} ;
-    var lngList = ${groupInstanceList.pois.loc.longitude} ;
-
-
-    function myMap() {
-
-        var myCenter = new google.maps.LatLng(51,-0.120850);
-        var mapCanvas = document.getElementById("map");
-        var mapOptions = {center: myCenter, zoom: 5};
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-
-        for (var iter=0; iter< latList.length; iter++ ){
-            var my1 = new google.maps.LatLng(latList[iter],lngList[iter]);
-            var marker1 = new google.maps.Marker ({position:my1});
-            marker1.setMap(map);
-        }
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4gFNEy61-CP4vgNVQCjBfGw6odeb-gt8&callback=myMap"></script>
 
 </body>
 </html>
